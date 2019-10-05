@@ -1,23 +1,17 @@
 package com.yorubadev.arny.ui;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.talkspaceapp.talkspace.R;
-import com.talkspaceapp.talkspace.engine.EngineUtils;
-import com.talkspaceapp.talkspace.utilities.ActivityLauncher;
+import com.yorubadev.arny.R;
+import com.yorubadev.arny.utilities.ActivityLauncher;
 
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -30,7 +24,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private boolean areNecessaryPermissionsGranted() {
         boolean result = true;
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+        /*if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
                 == PackageManager.PERMISSION_DENIED) result = false;
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -42,7 +36,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     checkSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_DENIED
                     || checkSelfPermission(Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_DENIED)
                 result = false;
-        }
+        }*/
 
         return result;
     }
@@ -70,38 +64,17 @@ public class SplashScreenActivity extends AppCompatActivity {
         if (checkPlayServices()) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             if (user != null) {
-                if (areNecessaryPermissionsGranted()) {
+                ActivityLauncher.launchResumeActivity(this);
+                finish();
+                /*if (areNecessaryPermissionsGranted()) {
                     //initialize the blocker class
-                    EngineUtils.initializeBlocker(this);
-
                     //for phones below Android 6
-                    try {
-                        if (!EngineUtils.checkIfListenerPermitted(this)) {
-                            ActivityLauncher.launchPermissionsCheck(this);
-                            finish();
-                        } else {
-                            try {
-                                if (!EngineUtils.checkIfNotificationPolicyAccessGranted(this)) {
-                                    ActivityLauncher.launchPermissionsCheck(this);
-                                } else {
-                                    ActivityLauncher.launchResumeActivity(this);
-                                    finish();
-                                }
-                            } catch (Exception e) {
-                                Crashlytics.logException(e);
-                                ActivityLauncher.launchPermissionsCheck(this);
-                                finish();
-                            }
-                        }
-                    } catch (Exception e) {
-                        Crashlytics.logException(e);
-                        ActivityLauncher.launchPermissionsCheck(this);
-                        finish();
-                    }
+                    ActivityLauncher.launchResumeActivity(this);
+                    finish();
                 } else {
                     ActivityLauncher.launchPermissionsCheck(this);
                     finish();
-                }
+                }*/
             } else {
                 new Handler().postDelayed(() -> {
                     ActivityLauncher.launchSignInActivity(this);

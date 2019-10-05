@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "830507379508",
+    "firebase_url": "https://arny-f5c12.firebaseio.com",
+    "project_id": "arny-f5c12",
+    "storage_bucket": "arny-f5c12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830507379508:android:9c334c20265907ee631361",
+        "android_client_info": {
+          "package_name": "com.yorubadev.arny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830507379508-3dheksftuvvscno54ljjif729of1k55m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yorubadev.arny",
+            "certificate_hash": "83b2244580c5b4d2925ad7f804424cf93faeacb8"
+          }
+        },
+        {
+          "client_id": "830507379508-0a8ct97npv08cs52nno42arqr2ku5e8e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADkYcAnPzCkSE5JG_e-lbVprjwDInbPvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830507379508-0a8ct97npv08cs52nno42arqr2ku5e8e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

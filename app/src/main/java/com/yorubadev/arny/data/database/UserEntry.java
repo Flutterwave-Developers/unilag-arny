@@ -14,21 +14,21 @@ public class UserEntry {
 
     @PrimaryKey
     @NonNull
-    private String pushId = "";
+    private String uid = "";
     private String name;
     private String phoneNumber;
-    private String statusMessage;
+    private double safetyRating;
 
     // Empty constructor for Firebase
     @Ignore
     public UserEntry() {
     }
 
-    public UserEntry(@NonNull String pushId, String name, String phoneNumber, String statusMessage) {
+    public UserEntry(@NonNull String uid, String name, String phoneNumber, double safetyRating) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.pushId = pushId;
-        this.statusMessage = statusMessage;
+        this.uid = uid;
+        this.safetyRating = safetyRating;
     }
 
     public String getPhoneNumber() {
@@ -48,19 +48,19 @@ public class UserEntry {
     }
 
     @NonNull
-    public String getPushId() {
-        return pushId;
+    public String getUid() {
+        return uid;
     }
 
-    public void setPushId(@NonNull String pushId) {
-        this.pushId = pushId;
+    public void setUid(@NonNull String uid) {
+        this.uid = uid;
     }
 
-    public String getStatusMessage() {
-        return statusMessage;
+    public double getSafetyRating() {
+        return safetyRating;
     }
 
-    public void setStatusMessage(String statusMessage) {
-        this.statusMessage = statusMessage;
+    public void setSafetyRating(double safetyRating) {
+        this.safetyRating = safetyRating;
     }
 }

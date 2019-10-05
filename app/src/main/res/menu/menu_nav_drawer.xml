@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_menu_home_icon"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_rides"
+            android:icon="@drawable/baseline_directions_car_black_24"
+            android:title="@string/nav_rides" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/ic_email_black_24dp"
+            android:title="@string/nav_messages" />
+        <item
+            android:id="@+id/nav_arny_points"
+            android:icon="@drawable/baseline_stars_black_24"
+            android:title="@string/nav_arny_points" />
+        <item
+            android:id="@+id/nav_arnyngs"
+            android:icon="@drawable/baseline_attach_money_black_24"
+            android:title="@string/nav_aryngs" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/nav_menu_settings_icon"
+            android:title="@string/nav_settings" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/baseline_info_black_24"
+            android:title="@string/nav_about" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/nav_menu_sign_out_icon"
+            android:title="@string/nav_sign_out" />
+    </group>
+</menu>

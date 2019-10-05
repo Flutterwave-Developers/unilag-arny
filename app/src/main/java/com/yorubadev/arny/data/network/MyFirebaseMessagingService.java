@@ -1,48 +1,32 @@
 package com.yorubadev.arny.data.network;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.text.TextUtils;
-
-import androidx.annotation.Nullable;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
+import androidx.annotation.NonNull;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.talkspaceapp.talkspace.AppExecutors;
-import com.talkspaceapp.talkspace.data.Repository;
-import com.talkspaceapp.talkspace.data.database.ChatRequest;
-import com.talkspaceapp.talkspace.utilities.ActivityLauncher;
-import com.talkspaceapp.talkspace.utilities.Constants;
-import com.talkspaceapp.talkspace.utilities.ImageUtils;
-import com.talkspaceapp.talkspace.utilities.InjectorUtils;
-import com.talkspaceapp.talkspace.utilities.NotificationUtils;
-import com.talkspaceapp.talkspace.utilities.PreferenceUtils;
-import com.talkspaceapp.talkspace.utilities.WorkUtils;
+import com.yorubadev.arny.data.Repository;
+import com.yorubadev.arny.utilities.InjectorUtils;
+import com.yorubadev.arny.utilities.WorkUtils;
 
 import java.util.Map;
-
-import me.leolin.shortcutbadger.ShortcutBadger;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 //    private static final String LOG_TAG = MyFirebaseMessagingService.class.getSimpleName();
 
     @Override
-    public void onNewToken(String token) {
+    public void onNewToken(@NonNull String token) {
         WorkUtils.scheduleMessagingTokenUpdateWork(this, token);
     }
 
     @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
+    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         if (remoteMessage.getData().size() > 0) {
             Map<String, String> data = remoteMessage.getData();
             String type = data.get("type");
             if (type != null) {
                 Repository repository = InjectorUtils.provideRepository(getApplicationContext());
-                switch (type) {
+                /*switch (type) {
                     case "request":
                         String requesterId = data.get(Constants.FIELD_REQUESTER_ID);
                         String requestId = data.get(Constants.FIELD_REQUEST_ID);
@@ -141,7 +125,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                         if (!TextUtils.isEmpty(contactUid)) {
                             repository.updateStatusMessage(contactUid, newStatus);
                         }
-                }
+                }*/
             }
         }
     }

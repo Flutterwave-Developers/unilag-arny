@@ -10,10 +10,10 @@ import androidx.work.ListenableWorker;
 import androidx.work.WorkerParameters;
 
 import com.google.common.util.concurrent.ListenableFuture;
-import com.talkspaceapp.talkspace.AppExecutors;
-import com.talkspaceapp.talkspace.data.Repository;
-import com.talkspaceapp.talkspace.utilities.InjectorUtils;
-import com.talkspaceapp.talkspace.utilities.WorkUtils;
+import com.yorubadev.arny.AppExecutors;
+import com.yorubadev.arny.data.Repository;
+import com.yorubadev.arny.utilities.InjectorUtils;
+import com.yorubadev.arny.utilities.WorkUtils;
 
 public class MessagingTokenUpdateWorker extends ListenableWorker {
 

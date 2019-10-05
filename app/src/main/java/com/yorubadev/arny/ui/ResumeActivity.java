@@ -5,8 +5,9 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.talkspaceapp.talkspace.R;
-import com.talkspaceapp.talkspace.utilities.ActivityLauncher;
+import com.yorubadev.arny.R;
+import com.yorubadev.arny.utilities.ActivityLauncher;
+
 
 public class ResumeActivity extends AppCompatActivity {
 

@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.talkspaceapp.talkspace.data.Repository;
+import com.yorubadev.arny.data.Repository;
 
 
 public class MainActivityViewModelFactory extends ViewModelProvider.NewInstanceFactory {
